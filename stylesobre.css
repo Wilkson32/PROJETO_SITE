@@ -25,16 +25,16 @@ body {
 
 /* Cabeçalho */
 header {
-    background: #333;
+    background: #2c3e50; /* Cor primária ajustada */
     color: #fff;
-    padding: 10px 0;
-    border-bottom: 5px solid #444;
+    padding: 15px 0; /* Aumenta o padding para mais espaço */
+    border-bottom: 5px solid #00aaff; /* Cor ajustada para destaque */
     text-align: center;
 }
 
 header h1 {
     margin: 0;
-    font-size: 2em;
+    font-size: 2.5em; /* Aumenta o tamanho da fonte do título */
 }
 
 header nav {
@@ -44,36 +44,47 @@ header nav {
 header nav ul {
     list-style: none;
     padding: 0;
+    display: flex;
+    justify-content: center; /* Alinha os itens do menu ao centro */
 }
 
 header nav ul li {
-    display: inline;
-    margin: 0 10px;
+    margin: 0 15px; /* Aumenta a margem para espaçamento */
 }
 
 header nav ul li a {
     color: #fff;
     text-decoration: none;
-    padding: 5px 10px;
+    padding: 10px 20px; /* Aumenta o padding para uma área clicável maior */
+    border-radius: 5px;
+    transition: background 0.3s, color 0.3s; /* Suaviza a transição de hover */
 }
 
 header nav ul li a:hover {
-    background: #555;
-    border-radius: 3px;
+    background: #2c3e50; /* Cor de fundo no hover */
+    color: #fff; /* Mantém a cor do texto */
 }
 
 /* Principal */
 main {
     margin: 20px 0;
-    flex: 1;
+    flex: 1; /* Isso faz o main ocupar o espaço restante */
+}
+
+main section {
+    background: #fff;
+    border: 1px solid #ddd; /* Cor da borda ajustada */
+    border-radius: 8px; /* Suaviza as bordas */
+    padding: 20px;
+    margin-bottom: 20px;
 }
 
 main h2 {
-    background: #fff;
-    border-bottom: 2px solid #333;
-    padding-bottom: 5px;
+    border-bottom: 2px solid #2c3e50; /* Cor ajustada para corresponder ao cabeçalho */
+    padding-bottom: 10px; /* Aumenta o padding para mais destaque */
     margin-bottom: 20px;
-    text-align: center;
+    font-size: 2em; /* Ajusta o tamanho da fonte para melhor legibilidade */
+    color: #2c3e50; /* Cor do texto ajustada */
 }
 
 .services-list {
@@ -84,26 +95,31 @@ main h2 {
 
 .service {
     background: #fff;
-    border: 1px solid #ccc;
-    border-radius: 5px;
+    border: 1px solid #ddd; /* Cor da borda ajustada */
+    border-radius: 8px; /* Ajusta o border-radius para mais suavidade */
     padding: 20px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Adiciona sombra para profundidade */
+    transition: box-shadow 0.3s; /* Suaviza a transição da sombra */
+}
+
+.service:hover {
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Intensifica a sombra no hover */
 }
 
 .service h3 {
-    color: #333;
-    margin-bottom: 10px;
+    color: ; /* Cor do título ajustada */
+    margin-bottom: 15px; /* Aumenta a margem para melhor espaçamento */
 }
 
 .service p {
-    line-height: 1.6;
+    line-height: 1.8; /* Ajusta o line-height para melhorar a legibilidade */
 }
 
 /* Rodapé */
 footer {
-    background: #333;
+    background: #2c3e50; /* Cor ajustada para corresponder ao cabeçalho */
     color: #fff;
     text-align: center;
-    padding: 10px 0;
-    margin-top: auto;
+    padding: 20px 0; /* Aumenta o padding para mais espaço */
+    border-top: 5px solid #00aaff; /* Borda superior adicionada para consistência */
 }

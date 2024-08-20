@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="../imagens/logo.jpg">
+    <title>Contatos</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+
+        div.menu {
+            background-color: white;
+            position:fixed;
+            display: flex;
+            align-items: center;
+            justify-content:flex-start;
+            width: 100%;
+            top: 0;
+            padding: 0;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            z-index: 999;
+        }
+
+        img.logo{
+            width: 125px;
+            height: 90px;
+            margin-right: 20px;
+        }
+
+        nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+        }
+
+        nav li {
+            margin-right: 20px;
+        }
+
+        nav a.menu-link {
+            color: black;
+            text-decoration: none;
+            padding: 0 15px;
+        }
+
+        nav a.menu-link:hover {
+            text-decoration: underline;
+        }
+
+        .container {
+            width: 80%;
+            margin: auto;
+            overflow: hidden;
+        }
+        header {
+            background: #2c3e50;
+            color: #fff;
+            padding-top: 50px;
+            min-height: 25px;
+            border-bottom: #2c3e50 3px solid;
+        }
+        header h1 {
+            color: white;
+            text-align: center;
+            margin: 0;
+            font-size: 24px;
+        }
+        .info-contatos {
+            background: rgb(141, 186, 245);
+            padding: 20px;
+            margin-top: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .info-contatos h2 {
+            margin-top: 0;
+        }
+        .info-contatos p {
+            margin: 5px 0;
+        }
+        .form-container {
+            background: rgb(141, 186, 245);
+            padding: 20px;
+            margin-top: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .form-container form {
+            display: flex;
+            flex-direction: column;
+        }
+        .form-container form input,
+        .form-container form textarea {
+            margin-bottom: 10px;
+            padding: 10px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .form-container form button {
+            padding: 10px;
+            font-size: 16px;
+            background: #333;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .form-container form button:hover {
+            background: #555;
+        }
+    </style>  
+   <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const form = document.getElementById('contactForm');
+    
+        form.addEventListener('submit', function(event) {
+            event.preventDefault();
+    
+            const nome = form.nome.value.trim();
+            const email = form.email.value.trim();
+            const telefone = form.telefone.value.trim();
+            const cidade = form.cidade.value.trim();
+            const mensagem = form.mensagem.value.trim();
+    
+            if (nome && email && telefone && cidade && mensagem) {
+                alert('Mensagem enviada com sucesso!');
+                form.reset();
+            } else {
+                alert('Por favor, preencha todos os campos.');
+            }
+        });
+    });
+</script>
+   
+</head>
+<body>
+    
+    <header>
+        <h1>ENTRE EM CONTATO CONOSCO</h1>
+    </header>
+    <div class="container">
+        <div class="info-contatos">
+            <h2>Informações de Contato</h2>
+            <p><strong>E-mail:</strong> <a href="mailto:W.J.E@hotmail.com">W.J.E@hotmail.com</a></p>
+            <p><strong>Telefone:</strong> (81) 3661-1111</p>
+            <p><strong>Instagram:</strong> <a href=""></a></p>
+            <p><strong>Endereço:</strong> Palmares - PE</p>
+        </div>
+        <div class="form-container">
+            <h2>Envie uma Mensagem</h2>
+            <form id="contactForm" action="#" method="post">
+                <input type="text" name="nome" placeholder="Nome" required>
+                <input type="email" name="email" placeholder="E-mail" required>
+                <input type="number" name="telefone" placeholder="Telefone" required>
+                <input type="text" name="cidade" placeholder="Cidade" required>
+                <textarea name="mensagem" placeholder="Mensagem" rows="5" required></textarea>
+                <button type="submit">Enviar</button>
+            </form>
+        </div>
+   </div>
+</body>
+</html>

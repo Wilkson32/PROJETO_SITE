@@ -11,13 +11,12 @@ html, body {
 }
 
 body {
-    font-family: Arial, sans-serif;
+    font-family: Arial, sans-serif; /* Fonte consistente */
     line-height: 1.6;
-    color: #333333;
+    color: #333;
     background-color: #f4f4f4;
     display: flex;
     flex-direction: column;
-    margin: 0;
 }
 
 /* Container principal */
@@ -29,16 +28,16 @@ body {
 
 /* Cabeçalho */
 header {
-    background: #333333;
+    background: #2c3e50; /* Cor do cabeçalho */
     color: #fff;
-    padding: 10px 0;
-    border-bottom: 5px solid #333333;
+    padding: 15px 0; /* Padding aumentado para mais espaço */
+    border-bottom: 5px solid #3498db; /* Cor secundária ajustada */
     text-align: center;
 }
 
 header h1 {
     margin: 0;
-    font-size: 2em;
+    font-size: 2.5em; /* Aumenta o tamanho da fonte do título */
 }
 
 header nav {
@@ -48,52 +47,95 @@ header nav {
 header nav ul {
     list-style: none;
     padding: 0;
+    display: flex;
+    justify-content: center; /* Alinha os itens do menu ao centro */
 }
 
 header nav ul li {
-    display: inline;
-    margin: 0 10px;
+    margin: 0 15px; /* Espaçamento aumentado entre itens do menu */
 }
 
 header nav ul li a {
     color: #fff;
     text-decoration: none;
-    padding: 5px 10px;
+    padding: 10px 20px; /* Padding aumentado para área clicável maior */
+    border-radius: 5px;
+    transition: background 0.3s, color 0.3s; /* Suaviza a transição de hover */
 }
 
 header nav ul li a:hover {
-    background: #3e50;
-    border-radius: 3px;
+    background: #3498db; /* Cor secundária no hover */
+    color: #fff; /* Mantém a cor do texto */
 }
 
 /* Principal */
 main {
     margin: 20px 0;
+    padding: 0 10px; /* Adiciona padding lateral para melhorar o espaçamento */
 }
 
 main h2 {
-    border-bottom: 2px solid #333333;
-    padding-bottom: 5px;
+    border-bottom: 2px solid #2c3e50; /* Cor do título alinhada com o cabeçalho */
+    padding-bottom: 10px;
     margin-bottom: 20px;
+    font-size: 2em; /* Tamanho da fonte ajustado */
+    text-align: center; /* Centraliza o título */
+    color: #2c3e50; /* Cor do texto ajustada */
 }
 
 article {
+    background: #fff;
+    border: 1px solid #ddd; /* Borda sutil ao redor do artigo */
+    border-radius: 8px; /* Bordas suavizadas */
+    padding: 20px;
     margin-bottom: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra para profundidade */
 }
 
 article h3 {
-    color: #333333;
+    color: #2c3e50; /* Cor do título do artigo */
+    font-size: 1.5em; /* Tamanho da fonte ajustado para destaque */
+    margin-bottom: 15px; /* Espaçamento abaixo do título */
 }
 
 article p {
-    line-height: 1.6;
+    line-height: 1.8; /* Melhora a legibilidade do texto */
+    margin-bottom: 10px; /* Adiciona margem abaixo dos parágrafos */
 }
 
 /* Rodapé */
 footer {
-    background: #333333;
+    background: #2c3e50; /* Cor do rodapé */
     color: #fff;
     text-align: center;
-    padding: 10px 0;
-    margin-top: auto; /* Garante que o rodapé esteja na parte inferior */
+    padding: 15px 0; /* Padding aumentado para mais espaço */
+    margin-top: auto; /* Garante que o rodapé esteja na parte inferior */
+    border-top: 5px solid #3498db; /* Cor secundária ajustada */
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .container {
+        width: 90%; /* Ajusta a largura do container em telas menores */
+    }
+
+    header h1 {
+        font-size: 1.8em; /* Ajusta o tamanho da fonte do título em telas menores */
+    }
+
+    header nav ul {
+        flex-direction: column; /* Alinha itens de menu verticalmente em telas menores */
+    }
+
+    header nav ul li {
+        margin: 5px 0; /* Ajusta o espaçamento dos itens do menu */
+    }
+
+    main h2 {
+        font-size: 1.8em; /* Ajusta o tamanho da fonte do título em telas menores */
+    }
+
+    article {
+        padding: 15px; /* Ajusta o padding do artigo em telas menores */
+    }
 }

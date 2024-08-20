@@ -1,21 +1,35 @@
+/* Variáveis de Cores */
+:root {
+    --primary-color: #2c3e50;
+    --secondary-color: #3498db;
+    --hover-color: #2980b9;
+    --text-color: #ffffff;
+    --border-color: #ddd;
+}
+
+/* Estilos Gerais */
 body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
+    line-height: 1.6;
+    background-color: #c5e8f8ea;
+    color: #333;
 }
 
+/* Cabeçalho */
 header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: #2c3e50;
+    background-color: var(--primary-color);
     padding: 10px 20px;
-    color: white;
+    color: var(--text-color);
 }
 
 .logo img {
-    height:50px;
-    width: 150px;
+    height: 50px;
+    width: auto;
 }
 
 nav ul {
@@ -23,16 +37,14 @@ nav ul {
     margin: 0;
     padding: 0;
     display: flex;
-}
-
-nav ul li {
-    margin: 0 15px;
+    gap: 15px; /* Melhor espaçamento entre itens */
 }
 
 nav ul li a {
-    color: white;
+    color: var(--text-color);
     text-decoration: none;
     font-weight: bold;
+    transition: text-decoration 0.3s;
 }
 
 nav ul li a:hover {
@@ -49,18 +61,22 @@ nav ul li a:hover {
     border-radius: 5px;
 }
 
+/* Seção Hero */
 .hero {
     background: url('https://proximonivel.embratel.com.br/wp-content/uploads/2022/07/cidades-inteligentes.jpg') no-repeat center center/cover;
     height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
-    color: white;
+    color: var(--text-color);
     text-align: center;
 }
 
 .hero-content {
     max-width: 600px;
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.5); /* Adiciona contraste ao texto */
+    border-radius: 10px;
 }
 
 .hero h1 {
@@ -77,17 +93,18 @@ nav ul li a:hover {
     display: inline-block;
     padding: 10px 20px;
     margin: 5px;
-    background-color: #3498db;
-    color: white;
+    background-color: var(--secondary-color);
+    color: var(--text-color);
     text-decoration: none;
     border-radius: 5px;
     transition: background-color 0.3s;
 }
 
 .hero-buttons .btn:hover {
-    background-color: #2980b9;
+    background-color: var(--hover-color);
 }
 
+/* Conteúdo Principal */
 main {
     padding: 20px;
 }
@@ -96,32 +113,46 @@ section {
     margin-bottom: 40px;
 }
 
-.about, .services, .news, .success-stories {
+/* Seções com Texto Centralizado */
+.about, .services, .success-stories {
     text-align: center;
 }
 
-.features, .service-list, .news-list, .stories-list {
+/* Layout Responsivo de Grades */
+.features, .service-list, .stories-list {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
+    gap: 20px; /* Espaçamento consistente entre itens */
 }
 
-.feature, .service, .news-item, .story {
+.feature, .service, .story {
     flex: 1;
     margin: 10px;
     padding: 20px;
-    border: 1px solid #ddd;
+    border: 1px solid var(--border-color);
     border-radius: 5px;
     max-width: 300px;
+    background-color: #08f0b6f8; /* Fundo branco para destaque */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Adiciona uma leve sombra */
 }
 
+/* Vídeos Responsivos */
+video {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+/* Rodapé */
 footer {
-    background-color: #2c3e50;
-    color: white;
+    background-color: var(--primary-color);
+    color: var(--text-color);
     padding: 20px;
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
+    gap: 20px; /* Espaçamento entre colunas */
 }
 
 footer div {
@@ -134,14 +165,16 @@ footer h3 {
 }
 
 footer a {
-    color: white;
+    color: var(--text-color);
     text-decoration: none;
+    transition: text-decoration 0.3s;
 }
 
 footer a:hover {
     text-decoration: underline;
 }
 
+/* Formulário de Newsletter */
 .newsletter input {
     padding: 10px;
     margin-right: 10px;
@@ -153,16 +186,38 @@ footer a:hover {
     padding: 10px 20px;
     border: none;
     border-radius: 5px;
-    background-color: #3498db;
-    color: white;
+    background-color: var(--secondary-color);
+    color: var(--text-color);
     cursor: pointer;
     transition: background-color 0.3s;
 }
 
 .newsletter button:hover {
-    background-color: #2980b9;
+    background-color: var(--hover-color);
 }
-video {
-    max-width: 100%;
-    height: auto;
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .hero h1 {
+        font-size: 2.5em;
+    }
+
+    .hero p {
+        font-size: 1.2em;
+    }
+
+    .hero-content {
+        padding: 15px;
+    }
+
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+    }
+
+    footer {
+        flex-direction: column;
+        align-items: center;
+    }
 }
