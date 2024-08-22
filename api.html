@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Comentários</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .container {
+            width: 100%;
+            max-width: 800px;
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            box-sizing: border-box;
+        }
+        .header {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .comments-list {
+            margin-bottom: 20px;
+        }
+        .comment {
+            border-bottom: 1px solid #ddd;
+            padding: 10px 0;
+        }
+        .comment:last-child {
+            border-bottom: none;
+        }
+        .comment-author {
+            font-weight: bold;
+        }
+        .comment-text {
+            margin-top: 5px;
+        }
+        .form-container {
+            margin-top: 20px;
+        }
+        .form-container input,
+        .form-container textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            box-sizing: border-box;
+            margin-bottom: 10px;
+        }
+        .form-container button {
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        .form-container button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Comentários</h1>
+        </div>
+        <div class="comments-list">
+            <!-- Os comentários serão carregados aqui -->
+        </div>
+        <div class="form-container">
+            <h2>Deixe seu comentário</h2>
+            <form id="comment-form">
+                <input type="text" id="author" placeholder="Seu nome" required>
+                <textarea id="comment-text" rows="4" placeholder="Seu comentário" required></textarea>
+                <button type="submit">Enviar Comentário</button>
+            </form>
+        </div>
+    </div>
+    <script>
+        // Simulação de armazenamento em memória para demonstração
+        const comments = [
+            { author: 'João Silva', text: 'Este é um comentário de exemplo. Gosto muito deste site!' },
+            { author: 'Maria Souza', text: 'Excelente conteúdo. Obrigado por compartilhar!' }
+        ];
+
+        document.addEventListener('DOMContentLoaded', function() {
+            const commentList = document.querySelector('.comments-list');
+            const form = document.getElementById('comment-form');
+            const authorInput = document.getElementById('author');
+            const textArea = document.getElementById('comment-text');
+
+            // Função para carregar os comentários
+            function loadComments() {
+                commentList.innerHTML = ''; // Limpar a lista atual
+                comments.forEach(comment => {
+                    const div = document.createElement('div');
+                    div.classList.add('comment');
+                    div.innerHTML = `
+                        <div class="comment-author">${comment.author}</div>
+                        <div class="comment-text">${comment.text}</div>
+                    `;
+                    commentList.appendChild(div);
+                });
+            }
+
+            // Carregar comentários ao iniciar
+            loadComments();
+
+            // Lidar com o envio do formulário
+            form.addEventListener('submit', function(event) {
+                event.preventDefault();
+
+                const author = authorInput.value.trim();
+                const text = textArea.value.trim();
+
+                if (author && text) {
+                    comments.push({ author, text });
+                    authorInput.value = '';
+                    textArea.value = '';
+                    loadComments(); 
+                }
+            });
+        });
+    </script>
+</body>
+</html>
+
