@@ -37,7 +37,7 @@ nav ul {
     margin: 0;
     padding: 0;
     display: flex;
-    gap: 15px; /* Melhor espaçamento entre itens */
+    gap: 20px; /* Melhor espaçamento entre itens */
 }
 
 nav ul li a {
@@ -61,7 +61,7 @@ nav ul li a:hover {
     border-radius: 5px;
 }
 
-/* Seção Hero */
+
 .hero {
     background: url('https://proximonivel.embratel.com.br/wp-content/uploads/2022/07/cidades-inteligentes.jpg') no-repeat center center/cover;
     height: 100vh;
